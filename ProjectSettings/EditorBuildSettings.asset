@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/carlos-scene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Yassuda.unity
+    guid: a19d94b49e78b984084f37b6e811db98
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 3495558a49cc60e4f8acc82638978edf, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

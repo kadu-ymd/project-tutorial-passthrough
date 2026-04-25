@@ -6,6 +6,8 @@ public class StalkerObject : MonoBehaviour
 {
     public NavMeshAgent agent;
     public float speed = 1;
+    [Tooltip("Sound played when hit by a projectile")]
+    public AudioClip hitSound;
 
     void Start()
     {

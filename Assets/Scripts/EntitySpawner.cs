@@ -10,8 +10,10 @@ public class EntitySpawner : MonoBehaviour
     public float minEdgeDistance = 0.3f;
     public MRUKAnchor.SceneLabels spawnLabel;
     public float normalOffset = 0.1f;
+    public int spawnLimit = 20;
 
     private float timer;
+    private int spawnCount = 0;
 
 
     void Start()
@@ -38,10 +40,15 @@ public class EntitySpawner : MonoBehaviour
     {
         MRUKRoom room = MRUK.Instance.GetCurrentRoom();
 
-        room.GenerateRandomPositionOnSurface(MRUK.SurfaceType.VERTICAL, minEdgeDistance, new LabelFilter(spawnLabel), out Vector3 pos, out Vector3 norm);
+        bool hasFound = room.GenerateRandomPositionOnSurface(MRUK.SurfaceType.VERTICAL, minEdgeDistance, new LabelFilter(spawnLabel), out Vector3 pos, out Vector3 norm);
 
-        Vector3 randomPositionNormalOffset = pos + norm * normalOffset;
-        randomPositionNormalOffset.y = 2;
-        Instantiate(prefabToSpawn, randomPositionNormalOffset, Quaternion.identity);
+        if (hasFound && spawnCount < spawnLimit)
+        {
+            Vector3 randomPositionNormalOffset = pos + norm * normalOffset;
+            randomPositionNormalOffset.y = 2;
+
+            Instantiate(prefabToSpawn, randomPositionNormalOffset, Quaternion.identity);
+            spawnCount++;
+        }
     }
 }

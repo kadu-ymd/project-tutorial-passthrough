@@ -125,7 +125,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000000000000000001}
   serializedVersion: 5
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6aaec99ca16a743a11adc98527d525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
-  defaultHitSound: {fileID: 0}
+  defaultHitSound: {fileID: 8300000, guid: 5b132d17094d9d443afa7c1b486679c1, type: 3}
   minImpactVelocity: 0.09
 --- !u!1 &1000000000000000009
 GameObject:
